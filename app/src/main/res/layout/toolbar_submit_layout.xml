@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/tool_bar"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black"
+    app:layout_scrollFlags="scroll|enterAlways"
+    tools:ignore="Overdraw"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gads_logo">
+    </ImageView>
+
+
+
+</androidx.appcompat.widget.Toolbar>

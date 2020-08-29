@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/tool_bar"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black"
+    app:layout_scrollFlags="scroll|enterAlways"
+    tools:ignore="Overdraw"
+    app:title="LEADERBOARD"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submit_button"
+        android:layout_marginLeft="100dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="Submit"
+        app:cornerRadius="20sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="120dp">
+
+    </com.google.android.material.button.MaterialButton>
+
+
+
+
+</androidx.appcompat.widget.Toolbar>
+
