@@ -14,7 +14,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
         <include
             layout="@layout/toolbar_leaderboard_layout"
-            android:id="@+id/tool_bar">
+            android:id="@+id/tool_bar_leaderboard">
         </include>
 
         <com.google.android.material.tabs.TabLayout
