@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.gadsleaderboardapp.leaderboard.learning_leaders.LearningLeadersFragment;
+import com.example.gadsleaderboardapp.leaderboard.skillIQ.SkillIQLeadersFragment;
+
 public class LeaderBoardPagerAdapter extends FragmentPagerAdapter {
 
     public LeaderBoardPagerAdapter(@NonNull FragmentManager fm) {
