@@ -66,27 +66,27 @@ public class SubmitActivity extends AppCompatActivity {
 
             custom_dialog.setContentView(R.layout.custom_are_you_sure_screen);
             close_button = custom_dialog.findViewById(R.id.close_button);
+            yes_button =  custom_dialog.findViewById(R.id.yes_button);
 
             close_button.setOnClickListener(view1 -> custom_dialog.dismiss());
-
 
             custom_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             custom_dialog.getWindow().setLayout((6 * width)/7, (4 * height)/5);
             custom_dialog.show();
 
+            yes_button.setOnClickListener(view12 -> {
+                String email = emailInput.getText().toString();
+                String firstName = firstNameInput.getText().toString();
+                String lastName = lastNameInput.getText().toString();
+                String projectLink = projectLinkInput.getText().toString();
+
+                Call<Void> completeGoogleForms = googleForms.completeGoogleForm(email, firstName, lastName, projectLink);
+
+                completeGoogleForms.enqueue(callBack);
+            });
+
         });
 
-        yes_button = custom_dialog.findViewById(R.id.yes_button);
-        yes_button.setOnClickListener(view -> {
-            String email = emailInput.getText().toString();
-            String firstName = firstNameInput.getText().toString();
-            String lastName = lastNameInput.getText().toString();
-            String projectLink = projectLinkInput.getText().toString();
-
-            Call<Void> completeGoogleForms = googleForms.completeGoogleForm(email, firstName, lastName, projectLink);
-
-            completeGoogleForms.enqueue(callBack);
-        });
     }
 
     private final Callback<Void> callBack = new Callback<Void>() {
@@ -101,6 +101,7 @@ public class SubmitActivity extends AppCompatActivity {
             handler.postDelayed(() -> {
                 success_dialog.cancel();
                 success_dialog.dismiss();
+                custom_dialog.dismiss();
             }, 1000);
         }
 
