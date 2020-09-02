@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/close_button"
+                android:layout_margin="10dp"
+                android:layout_gravity="right"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_baseline_clear_24"
+                android:backgroundTint="@color/orange"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.button.MaterialButton>
+
+            <TextView
+                android:fontFamily="@font/lato_regular"
+                android:textSize="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Are you sure?">
+            </TextView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/yes_button"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_marginTop="60dp"
+                android:layout_gravity="center"
+                android:text="Yes"
+                android:textColor="@color/orange"
+                app:strokeColor="@color/orange"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content">
+            </com.google.android.material.button.MaterialButton>
+
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

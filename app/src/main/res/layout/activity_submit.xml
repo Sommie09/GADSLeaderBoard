@@ -39,7 +39,29 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:hint="Email Address"
+        android:textColorHint="@color/white"
+        app:boxStrokeColor="@color/white"
+        android:layout_gravity="center">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_input_email"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:fontFamily="@font/lato_regular"
+            android:paddingLeft="10dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="30dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:hint="First Name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:textColorHint="@color/white"
         app:boxStrokeColor="@color/white"
         android:layout_gravity="center">
@@ -68,28 +90,6 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_input_last_name"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:inputType="text"
-            android:textColor="@color/white"
-            android:fontFamily="@font/lato_regular"
-            android:paddingLeft="10dp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="30dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email Address"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textColorHint="@color/white"
-        app:boxStrokeColor="@color/white"
-        android:layout_gravity="center">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/text_input_email"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:inputType="textEmailAddress"
@@ -121,6 +121,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/submit_button"
         android:text="SUBMIT"
         app:backgroundTint="@color/orange"
         android:layout_marginTop="50dp"
