@@ -14,10 +14,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.example.gadsleaderboardapp.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -63,27 +65,34 @@ public class SubmitActivity extends AppCompatActivity {
         final APIInterfaceSubmit googleForms = retrofitSubmit.create(APIInterfaceSubmit.class);
 
         submitButton.setOnClickListener(view -> {
+            if(firstNameInput.getText().toString().isEmpty() || lastNameInput.getText().toString().isEmpty() || emailInput.getText().toString().isEmpty() ||projectLinkInput.getText().toString().isEmpty()){
+                Toast.makeText(SubmitActivity.this, "Please complete details", Toast.LENGTH_SHORT).show();
+            }else{
 
-            custom_dialog.setContentView(R.layout.custom_are_you_sure_screen);
-            close_button = custom_dialog.findViewById(R.id.close_button);
-            yes_button =  custom_dialog.findViewById(R.id.yes_button);
+                custom_dialog.setContentView(R.layout.custom_are_you_sure_screen);
+                close_button = custom_dialog.findViewById(R.id.close_button);
+                yes_button =  custom_dialog.findViewById(R.id.yes_button);
 
-            close_button.setOnClickListener(view1 -> custom_dialog.dismiss());
+                close_button.setOnClickListener(view1 -> custom_dialog.dismiss());
 
-            custom_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            custom_dialog.getWindow().setLayout((6 * width)/7, (4 * height)/5);
-            custom_dialog.show();
+                custom_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                custom_dialog.getWindow().setLayout((6 * width)/7, (4 * height)/5);
+                custom_dialog.show();
 
-            yes_button.setOnClickListener(view12 -> {
-                String email = emailInput.getText().toString();
-                String firstName = firstNameInput.getText().toString();
-                String lastName = lastNameInput.getText().toString();
-                String projectLink = projectLinkInput.getText().toString();
+                yes_button.setOnClickListener(view12 -> {
+                    String email = emailInput.getText().toString();
+                    String firstName = firstNameInput.getText().toString();
+                    String lastName = lastNameInput.getText().toString();
+                    String projectLink = projectLinkInput.getText().toString();
 
-                Call<Void> completeGoogleForms = googleForms.completeGoogleForm(email, firstName, lastName, projectLink);
+                    Call<Void> completeGoogleForms = googleForms.completeGoogleForm(email, firstName, lastName, projectLink);
 
-                completeGoogleForms.enqueue(callBack);
-            });
+                    completeGoogleForms.enqueue(callBack);
+                });
+
+
+            }
+
 
         });
 
