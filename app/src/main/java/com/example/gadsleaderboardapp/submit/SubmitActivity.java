@@ -10,6 +10,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -101,6 +102,7 @@ public class SubmitActivity extends AppCompatActivity {
     private final Callback<Void> callBack = new Callback<Void>() {
         @Override
         public void onResponse(Call<Void> call, Response<Void> response) {
+            Log.d("RESPONSE", String.valueOf(response.code()));
             success_dialog.setContentView(R.layout.custom_successful);
             success_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             success_dialog.getWindow().setLayout((6 * width)/7, (4 * height)/5);
@@ -112,6 +114,8 @@ public class SubmitActivity extends AppCompatActivity {
                 success_dialog.dismiss();
                 custom_dialog.dismiss();
             }, 1000);
+
+
         }
 
         @Override
@@ -125,6 +129,7 @@ public class SubmitActivity extends AppCompatActivity {
             handler.postDelayed(() -> {
                 success_dialog.cancel();
                 success_dialog.dismiss();
+                custom_dialog.dismiss();
             }, 1000);
 
         }
