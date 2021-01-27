@@ -67,7 +67,7 @@ public class SubmitActivity extends AppCompatActivity {
 
         submitButton.setOnClickListener(view -> {
             if(firstNameInput.getText().toString().isEmpty() || lastNameInput.getText().toString().isEmpty() || emailInput.getText().toString().isEmpty() ||projectLinkInput.getText().toString().isEmpty()){
-                Toast.makeText(SubmitActivity.this, "Please complete details", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SubmitActivity.this, "Please complete your details", Toast.LENGTH_SHORT).show();
             }else{
 
                 custom_dialog.setContentView(R.layout.custom_are_you_sure_screen);
